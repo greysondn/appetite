@@ -1,5 +1,6 @@
-Welcome to my docs.
+APpetite is a toolkit for making game state representations, with a particular
+focus on Archipelago AP World development.
 
-This is the copier template initialized index file.
-
-I should write content here.
+!!! greysondn "Early docs"
+    These docs are very early and there's a good chance no matching code exists
+    yet. Just so you've been warned.

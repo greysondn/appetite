@@ -1,1 +1,1 @@
-This is an about page, but I haven't written it, and that's probably not a good thing.
+I have no idea what to put in here, so it can wait for now.
