@@ -43,6 +43,7 @@ dev = [
     "pytest",
     "coverage[toml]",
     "pytest-cov",
+    "pytest-timeout",
 ]
 
 docs = [
@@ -66,6 +67,7 @@ test = [
     "pytest",
     "coverage[toml]",
     "pytest-cov",
+    "pytest-timeout",
 ]
 
 # ----------------
