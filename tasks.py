@@ -1,9 +1,9 @@
-from invoke.context import Context
-from invoke.tasks import task
-from pathlib import Path
-
 import platform
 import re
+from pathlib import Path
+
+from invoke.context import Context
+from invoke.tasks import task
 
 @task
 def build(ctx:Context):
