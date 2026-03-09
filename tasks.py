@@ -5,6 +5,7 @@ from pathlib import Path
 from invoke.context import Context
 from invoke.tasks import task
 
+
 @task
 def build(ctx:Context):
     match platform.system():
