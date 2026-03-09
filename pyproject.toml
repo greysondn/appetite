@@ -12,7 +12,7 @@ dependencies = [
 ]
 requires-python = ">=3.12"
 authors = [
-    {name = "J. "Dorian Greyson" L.", email = "greysondn@gmail.com"},
+    {name = 'J. "Dorian Greyson" L.', email = "greysondn@gmail.com"},
 ]
 description = "A project so new, it doesn't have a description!"
 readme = "README.md"
