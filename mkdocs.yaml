@@ -8,8 +8,8 @@ copyright: 2026 J. "Dorian Greyson" L.
 nav:
     - Home: "index.md"
     - Items:
-        Overview: "items/overview.md"
-        # Callbacks: "items/callbacks.md"
+        - Overview: "items/overview.md"
+        # - Callbacks: "items/callbacks.md"
     - About: "about.md"
 
 theme:
