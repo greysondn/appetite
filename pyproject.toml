@@ -29,7 +29,6 @@ dev = [
 
     # docs
     "mike",
-    "mkdocs",
     "mkdocs-material",
     "mkdocstrings[python]",
 
@@ -49,7 +48,6 @@ dev = [
 docs = [
     "invoke",
     "mike",
-    "mkdocs",
     "mkdocs-material",
     "mkdocstrings[python]",
 ]

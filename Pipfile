@@ -23,7 +23,6 @@ pytest-timeout = "*"
 yapf = "*"
 
 mike = "*"
-mkdocs = "*"
 mkdocs-material = "*"
 mkdocstrings = {extras = ["python"], version = "*"}
 
