@@ -1,0 +1,102 @@
+name: CI + docs deploy
+
+on:
+    push:
+        branches:
+            - main
+            - dev
+        tags:
+            - "v*"
+    pull_request:
+        branches:
+            - main
+            - dev
+
+permissions:
+    contents: write
+
+jobs:
+    run_tests:
+        runs-on: ubuntu-latest
+        steps:
+            - 
+                name: checkout repository
+                uses: actions/checkout@v6
+                with:
+                    fetch-depth: 0
+            - 
+                name: setup python
+                uses: actions/setup-python@v6
+                with:
+                    python-version: "3.12"
+            -
+                name: upgrade pip
+                run: pip install --upgrade pip
+            -
+                name: install pipenv into system packages
+                run: pip install pipenv
+            -
+                name: verify versions of python, pip, pipenv
+                run: |
+                    python --version
+                    pip --version
+                    pipenv --version
+            -
+                name: install dependencies using pipenv
+                run: pipenv install --dev
+            -
+                name: run tests
+                run: pipenv run invoke test
+    deploy_docs:
+        needs: run_tests
+        if: github.event_name == "push"
+        runs-on: ubuntu-latest
+        steps:
+            - 
+                name: checkout repository
+                uses: actions/checkout@v6
+                with:
+                    fetch-depth: 0
+            - 
+                name: setup python
+                uses: actions/setup-python@v6
+                with:
+                    python-version: "3.12"
+            -
+                name: upgrade pip
+                run: pip install --upgrade pip
+            -
+                name: install pipenv into system packages
+                run: pip install pipenv
+            -
+                name: verify versions of python, pip, pipenv
+                run: |
+                    python --version
+                    pip --version
+                    pipenv --version
+            -
+                name: install dependencies using pipenv
+                run: pipenv install --dev
+            -
+                name: configure git
+                run: |
+                    git config user.name "github-actions[bot]"
+                    git config user.email "github-actions[bot]@users.noreply.github.com"
+            -
+                name: deploy docs with mike
+                run: |
+                    
+                    if [[ "${{ github.ref_type }}" == "tag" ]]; then
+                        DOC_VERSION="${{ github.ref_name }}"
+                        echo "Deploying tag as version $DOC_VERSION (and updating latest)"
+                        pipenv run mike deploy --push "$DOC_VERSION" latest
+                        pipenv run mike set-default --push latest
+                    elif [[ "${{ github.ref_name }}" == "main" ]]; then
+                        echo "Deploying main branch as both main and latest"
+                        pipenv run mike deploy --push --update-aliases main latest
+                        pipenv run mike set-default --push latest
+                    elif [[ "${{ github.ref_name }}" == "dev" ]]; then
+                        echo "Deploying dev branch as dev"
+                        pipenv run mike deploy --push dev
+                    fi
+                    

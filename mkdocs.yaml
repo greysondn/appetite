@@ -1,0 +1,118 @@
+site_name: APpetite
+repo_url: https://github.com/greysondn/appetite
+edit_uri: blob/dev/docs/
+site_description: Docs for APpetite
+site_author: J. "Dorian Greyson" L.
+copyright: 2026 J. "Dorian Greyson" L.
+
+nav:
+    - Home: "index.md"
+    - About: "about.md"
+
+theme:
+    name: material
+    language: en
+    features:
+        - content.code.annotate
+        - content.code.copy
+        - navigation.instant
+        - navigation.instant.progress
+        - navigation.path
+        - navigation.sections
+        - toc.follow
+        - toc.integrate
+
+    # color settings
+    palette:
+        -
+            scheme: default
+            media: "(prefers-color-scheme: light)"
+            primary: blue-grey
+            accent: deep-purple
+            toggle:
+                icon: material/lightbulb
+                name: turn off the lights
+        -
+            scheme: slate
+            media: "(prefers-color-scheme: dark)"
+            primary: black
+            accent:  blue
+            toggle:
+                icon: material/lightbulb-outline
+                name: turn on the lights
+
+    # font settings
+    font:
+        text: Fuzzy Bubbles
+        code: PT Mono
+
+extra:
+    version:
+        provider: mike
+
+extra_css:
+  - stylesheets/extra.css
+
+docs_dir: "docs"
+
+plugins:
+    - 
+        mkdocstrings:
+            default_handler: python
+            enable_inventory: true
+            handlers:
+                python:
+                    inventories:
+                        - https://docs.python.org/3/objects.inv
+                    options:
+                        allow_inspection: true
+                        separate_signature: true
+                        show_bases: true
+                        show_overloads: true
+                        show_signature: true
+                        show_signature_annotations: true
+                        show_signature_type_parameters: true
+                        show_source: true
+                        signature_crossrefs: true
+                    paths:
+                        - src
+    - 
+        privacy                    # mostly to get things away from Google's CDN
+    -
+        search
+
+
+
+markdown_extensions:
+    - abbr
+    - admonition
+    - fenced_code
+    - footnotes
+    - meta
+    - pymdownx.details
+    - pymdownx.highlight:
+        anchor_linenums: true
+        auto_title: true
+        line_spans: __span
+        linenums: true
+        linenums_style: pymdownx-inline
+        pygments_lang_class: true
+        use_pygments: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences:
+        custom_fences:
+            -
+                name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - tables
+    - toc:
+        marker: "[TOC]"
+        baselevel: 2
+        title: On this page
+        permalink: true
+        permalink_title: Anchor link to this section for reference
+        toc_depth: 6
