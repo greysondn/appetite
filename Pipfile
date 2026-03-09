@@ -18,6 +18,8 @@ pytest-cov = "*"
 isort = "*"
 pytest-isort = "*"
 
+pytest-timeout = "*"
+
 yapf = "*"
 
 mike = "*"

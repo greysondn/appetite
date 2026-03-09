@@ -49,7 +49,7 @@ jobs:
                 run: pipenv run invoke test
     deploy_docs:
         needs: run_tests
-        if: github.event_name == "push"
+        if: ${{ github.event_name == 'push' }}
         runs-on: ubuntu-latest
         steps:
             - 
