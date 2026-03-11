@@ -44,11 +44,13 @@ type:                 string
 default:              n/a
 is_required:          true
 must_be_unique:       true
-given_to_archipelago: true 
+given_to:
+    archipelago: true
+    bizhawk:     false
 ```
 
 The name used for this item. This is also used as a primary key elsewhere in
-appetite.
+APpetite.
 
 ## `internal`
 
@@ -57,7 +59,9 @@ type:                 boolean
 default:              false
 is_required:          false
 must_be_unique:       false
-given_to_archipelago: false
+given_to:
+    archipelago: false
+    bizhawk:     false
 ```
 
 An item which is not given to the randomizer but exists within the game state. Archipelago calls these "virtual" items. It does not *appear* to need them.
@@ -80,7 +84,9 @@ type:                 unsigned_integer
 default:              1
 is_required:          false
 must_be_unique:       false
-given_to_archipelago: indirectly
+given_to:
+    archipelago: indirectly
+    bizhawk:     false
 ```
 
 The count of this item to put into the item pool by default. You're always
@@ -93,7 +99,9 @@ type:                 list[string]
 default:              n/a
 is_required:          true
 must_be_unique:       false
-given_to_archipelago: true
+given_to:
+    archipelago: true
+    bizhawk:     false
 ```
 
 A list of item categories - in archipelago terms - this item belongs to.
@@ -158,7 +166,9 @@ type:                 list[string]
 default:              []
 is_required:          false
 must_be_unique:       false
-given_to_archipelago: true
+given_to:
+    archipelago: true
+    bizhawk:     false
 ```
 
 A list of alternate names to give this item. Mostly used for hinting.
@@ -170,7 +180,9 @@ type:                 list[string]
 default:              []
 is_required:          false
 must_be_unique:       false
-given_to_archipelago: true
+given_to:
+    archipelago: true
+    bizhawk:     false
 ```
 
 A list of item groups to put this item into. This list is given to Archipelago.
@@ -191,7 +203,9 @@ type:                 dictonary[string, Any]
 default:              []
 is_required:          false
 must_be_unique:       false
-given_to_archipelago: false
+given_to:
+    archipelago: false
+    bizhawk:     false
 ```
 
 Todo: Documentation
