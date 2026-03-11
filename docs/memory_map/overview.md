@@ -71,8 +71,8 @@ Whether this is required and the valid values for it will be platform-dependent.
 ## `address`
 
 ```yaml
-type:                 string
-default:              "main"
+type:                 uint
+default:              0
 is_required:          false
 must_be_unique:       false
 given_to:
