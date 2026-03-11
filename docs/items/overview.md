@@ -50,18 +50,6 @@ given_to_archipelago: true
 The name used for this item. This is also used as a primary key elsewhere in
 appetite.
 
-## `virtual`
-
-```yaml
-type:                 boolean
-default:              false
-is_required:          false
-must_be_unique:       false
-given_to_archipelago: unknown
-```
-
-TODO: description.
-
 ## `internal`
 
 ```yaml
@@ -69,10 +57,21 @@ type:                 boolean
 default:              false
 is_required:          false
 must_be_unique:       false
-given_to_archipelago: unknown
+given_to_archipelago: false
 ```
 
-TODO: description.
+An item which is not given to the randomizer but exists within the game state. Archipelago calls these "virtual" items. It does not *appear* to need them.
+
+!!! greysondn "Removal and Renaming of Virtual Items"
+    It's easy to cry foul on feature parity when you see the above. The design of this entire system was a long step back and trying to stratify concerns.
+
+    The reason virtual items exist is that there may be items which exist in the game state but are not necessary for a player to be given by the server and/or cannot be randomized.
+
+    This represents AP becoming tightly coupled to the gamestate representation. This tight coupling is exactly what APpetite exists to address.
+
+    It's therefore important to understand that the reason this isn't given to AP is that *it belongs to the gamestate, and APpetite exists to take over the gamestate representation.*.
+
+    The renaming is semantic. From AP's perspective, the item is virtual. From the gamestate's perspective, the item is internal. I do not believe either of us got it wrong.
 
 ## `count`
 
