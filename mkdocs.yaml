@@ -10,6 +10,8 @@ nav:
     - Items:
         - Overview: "items/overview.md"
         # - Callbacks: "items/callbacks.md"
+    - Memory Map:
+        - Overview: "memory_map/overview.md"
     - About: "about.md"
 
 theme:
