@@ -17,21 +17,22 @@ Okay wait, where's my text
 # Example
 
 ```yaml
--
-    name: Victory
-    virtual: false
-    internal: false
-    count: 1
-    categories:
-        - progression
-    aliases: []
-    groups:
-        - Goal Items
-    callbacks:
-        on_receive:
-            name: complete_game
-            params:
-                pass: true
+items:
+    -
+        name: Victory
+        virtual: false
+        internal: false
+        count: 1
+        categories:
+            - progression
+        aliases: []
+        groups:
+            - Goal Items
+        callbacks:
+            on_receive:
+                name: complete_game
+                params:
+                    pass: true
 ```
 
 # Field definitions
