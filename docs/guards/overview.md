@@ -214,7 +214,7 @@ The name defined in the [memory map file](../memory_map/overview.md).
 
 The value the memory address must be less than. Either a key defined in `values` from the [memory map file](../memory_map/overview.md) or an exact value.
 
-## `memory_greater_than_or_equals`
+## `memory_less_than_or_equals`
 
 ### Summary
 
