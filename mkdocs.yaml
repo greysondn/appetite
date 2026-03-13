@@ -7,6 +7,8 @@ copyright: 2026 J. "Dorian Greyson" L.
 
 nav:
     - Home: "index.md"
+    - Callbacks:
+        - overview: "callbacks/overview.md"
     - Guards:
         - Overview: "guards/overview.md"
     - Items:
