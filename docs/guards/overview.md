@@ -136,6 +136,137 @@ The name defined in the [memory map file](../memory_map/overview.md).
 
 The value the memory address must be equal to. Either a key defined in `values` from the [memory map file](../memory_map/overview.md) or an exact value.
 
+## `memory_greater_than`
+
+### Summary
+
+Checks that a memory address is greater than some expected value.
+
+### Example
+
+```yaml
+guard:
+    type: memory_greater_than
+    params:
+        name: player_health
+        value: 50
+```
+
+### Parameters
+
+#### `name`
+
+The name defined in the [memory map file](../memory_map/overview.md).
+
+#### `value`
+
+The value the memory address must be greater than. Either a key defined in `values` from the [memory map file](../memory_map/overview.md) or an exact value.
+
+## `memory_greater_than_or_equals`
+
+### Summary
+
+Checks that a memory address is greater or equal to some expected value.
+
+### Example
+
+```yaml
+guard:
+    type: memory_greater_than_or_equals
+    params:
+        name: player_health
+        value: 50
+```
+
+### Parameters
+
+#### `name`
+
+The name defined in the [memory map file](../memory_map/overview.md).
+
+#### `value`
+
+The value the memory address must be greater than or equal to. Either a key defined in `values` from the [memory map file](../memory_map/overview.md) or an exact value.
+
+## `memory_less_than`
+
+### Summary
+
+Checks that a memory address is less than some expected value.
+
+### Example
+
+```yaml
+guard:
+    type: memory_less_than
+    params:
+        name: player_health
+        value: 50
+```
+
+### Parameters
+
+#### `name`
+
+The name defined in the [memory map file](../memory_map/overview.md).
+
+#### `value`
+
+The value the memory address must be less than. Either a key defined in `values` from the [memory map file](../memory_map/overview.md) or an exact value.
+
+## `memory_greater_than_or_equals`
+
+### Summary
+
+Checks that a memory address is less or equal to some expected value.
+
+### Example
+
+```yaml
+guard:
+    type: memory_less_than_or_equals
+    params:
+        name: player_health
+        value: 50
+```
+
+### Parameters
+
+#### `name`
+
+The name defined in the [memory map file](../memory_map/overview.md).
+
+#### `value`
+
+The value the memory address must be less than or equal to. Either a key defined in `values` from the [memory map file](../memory_map/overview.md) or an exact value.
+
+
+## `memory_not_equals`
+
+### Summary
+
+Checks that a memory address is not equal to some expected value.
+
+### Example
+
+```yaml
+guard:
+    type: memory_not_equals
+    params:
+        name: player_powerup
+        value: fire
+```
+
+### Parameters
+
+#### `name`
+
+The name defined in the [memory map file](../memory_map/overview.md).
+
+#### `value`
+
+The value the memory address must not be equal to. Either a key defined in `values` from the [memory map file](../memory_map/overview.md) or an exact value.
+
 ## `or`
 
 ### Summary
